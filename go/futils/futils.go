@@ -5,7 +5,7 @@ import (
 	"os"
 )
 
-func checkErr(err error) {
+func CheckErr(err error) {
 	if err != nil {
 		panic(err)
 	}
@@ -13,7 +13,7 @@ func checkErr(err error) {
 
 func Lines(path string) []string {
 	f, err := os.Open(path)
-	checkErr(err)
+	CheckErr(err)
 	fs := bufio.NewScanner(f)
 	fs.Split(bufio.ScanLines)
 
